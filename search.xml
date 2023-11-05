@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/11/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to 我的新家</p>
+<h2 id="想吃牛肉"><a href="#想吃牛肉" class="headerlink" title="想吃牛肉"></a>想吃牛肉</h2><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<h2 id="print-“112”"><a href="#print-“112”" class="headerlink" title="print(“112”)"></a>print(“112”)</h2><hr>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>今天去吃牛肉面</p>
+<h1 id="搜索功能好难写啊！！！"><a href="#搜索功能好难写啊！！！" class="headerlink" title="搜索功能好难写啊！！！"></a>搜索功能好难写啊！！！</h1>]]></content>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2023/11/05/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="首页的阅读次数怎么显示不出来啊！what-happened"><a href="#首页的阅读次数怎么显示不出来啊！what-happened" class="headerlink" title="首页的阅读次数怎么显示不出来啊！what happened?"></a>首页的阅读次数怎么显示不出来啊！what happened?</h1><h2 id="访客怎么变成几千万了"><a href="#访客怎么变成几千万了" class="headerlink" title="访客怎么变成几千万了???"></a>访客怎么变成几千万了???</h2><h2 id="bug怎么这么多"><a href="#bug怎么这么多" class="headerlink" title="bug怎么这么多"></a>bug怎么这么多</h2><p>哭了啊，这里随便写点乱七八糟吧：</p>
+<p>在C++中，<code>char str = &quot;afefa&quot;;</code> 是一个不合法的语法。如果你想声明一个字符串，正确的方式是使用字符数组（C风格字符串）或者C++的<code>std::string</code>类。下面是两种合法的方式：</p>
+<span id="more"></span>
+
+<ol>
+<li><strong>使用字符数组（C风格字符串）：</strong></li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> str[] = <span class="string">&quot;afefa&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在这种情况下，编译器会在内存中分配足够的空间来存储字符串及其结尾的空字符（’\0’）。<code>str</code> 数组的大小将是字符串长度加上一个额外的字节来存储空字符。在这个例子中，<code>str</code> 的大小将是 6 字节（5 个字符 + 1 个空字符）。</p>
+<p>内存结构示意图（每个方框代表一个字节）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+---+---+---+---+---+---+</span><br><span class="line">| a | f | e | f | a | \0|</span><br><span class="line">+---+---+---+---+---+---+</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>使用<code>std::string</code>类：</strong></li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::string str = <span class="string">&quot;afefa&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>std::string</code>类时，字符串的长度和内存管理由<code>std::string</code>类自动处理，你无需担心内存结构。<code>std::string</code>类会在需要时动态分配内存以容纳字符串。</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+</search>
