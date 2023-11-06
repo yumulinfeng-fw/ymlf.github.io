@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/11/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to 我的新家</p>
-<h2 id="想吃牛肉"><a href="#想吃牛肉" class="headerlink" title="想吃牛肉"></a>想吃牛肉</h2><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+    <title>C++的进阶语法</title>
+    <url>/2023/11/06/C++%E7%9A%84%E8%BF%9B%E9%98%B6%E8%AF%AD%E6%B3%95(%E4%BB%85%E8%AF%AD%E6%B3%95%E5%B1%82%E9%9D%A2)/</url>
+    <content><![CDATA[<p>最近复习一下语法，结合了以下三本工具书，记录一下有收获的点：</p>
+<ul>
+<li>《C++ Primer》</li>
+<li>《Effective C++》</li>
+<li>《More Effective C++》</li>
+</ul>
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><p>个人认为，重载是C++区别于C的三大特性（封装，继承，多态）中属于封装的重要特性之一，注意，重载（Overloading）是一种封装（Encapsulation）的概念而非多态，它允许在同一个作用域内使用相同的名称，但是参数列表不同的函数或方法。</p>
+<blockquote>
+<p>重载 是一种封装的概念，它提供了一种通过相同的名称执行不同操作的机制，提高了函数或方法的可用性和易用性。<br>多态 是面向对象编程的一个特性，它允许不同的对象对相同的消息做出不同的响应，提高了代码的灵活性和可扩展性。</p>
+</blockquote>
+<p>下面介绍一些重载的高阶用法：</p>
+<span id="more"></span>
 
-<h2 id="print-“112”"><a href="#print-“112”" class="headerlink" title="print(“112”)"></a>print(“112”)</h2><hr>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>今天去吃牛肉面</p>
-<h1 id="搜索功能好难写啊！！！"><a href="#搜索功能好难写啊！！！" class="headerlink" title="搜索功能好难写啊！！！"></a>搜索功能好难写啊！！！</h1>]]></content>
+<h3 id="转换构造函数"><a href="#转换构造函数" class="headerlink" title="转换构造函数"></a>转换构造函数</h3><p>内容略</p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>2023-11</tag>
+      </tags>
   </entry>
   <entry>
-    <title>测试</title>
+    <title>Hello World</title>
+    <url>/2023/11/05/hello-world/</url>
+    <content><![CDATA[<p>兄弟们，你们的到来使我感动不已，我只能说：Welcome to 我的新家，欢迎你们常来做客！</p>
+<h1 id="Declaration"><a href="#Declaration" class="headerlink" title="Declaration"></a>Declaration</h1><p>本篇是建站以来第一篇文章，将来等文章多了他就刷到底下去了，但是一篇文章的沉底并不代表着他的消失和埋没，反而象征着这里古老的地基；有时候，网站和团队多么像啊，一篇篇文章就像团队的一个个人一样。希望将来再看到这篇文章的时候，还记得自己当时为什么出发&gt;~&lt;</p>
+<p>————yours ymlf</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>C &amp;&amp; C++ 易混淆问题</title>
     <url>/2023/11/05/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="首页的阅读次数怎么显示不出来啊！what-happened"><a href="#首页的阅读次数怎么显示不出来啊！what-happened" class="headerlink" title="首页的阅读次数怎么显示不出来啊！what happened?"></a>首页的阅读次数怎么显示不出来啊！what happened?</h1><h2 id="访客怎么变成几千万了"><a href="#访客怎么变成几千万了" class="headerlink" title="访客怎么变成几千万了???"></a>访客怎么变成几千万了???</h2><h2 id="bug怎么这么多"><a href="#bug怎么这么多" class="headerlink" title="bug怎么这么多"></a>bug怎么这么多</h2><p>哭了啊，这里随便写点乱七八糟吧：</p>
-<p>在C++中，<code>char str = &quot;afefa&quot;;</code> 是一个不合法的语法。如果你想声明一个字符串，正确的方式是使用字符数组（C风格字符串）或者C++的<code>std::string</code>类。下面是两种合法的方式：</p>
+    <content><![CDATA[<p>bug太多了，哭了啊，今天又修了一天，可算把搜索功能整好了，后续打算开发一个评论功能，看有没有精力吧zzz</p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>在C++中，<code>char str = &quot;afefa&quot;;</code> 是一个不合法的语法。如果你想声明一个字符串，正确的方式是使用字符数组（C风格字符串）或者C++的<code>std::string</code>类。下面是两种合法的方式：</p>
 <span id="more"></span>
 
 <ol>
@@ -28,6 +49,7 @@
 <p>内存结构示意图（每个方框代表一个字节）：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+---+---+---+---+---+---+</span><br><span class="line">| a | f | e | f | a | \0|</span><br><span class="line">+---+---+---+---+---+---+</span><br></pre></td></tr></table></figure>
 
+<p>值得注意的是，这种写法目前已经被GCCban了，会报warning，我个人建议写成const char str[] &#x3D; “…”，这样更符合常量字符串的定义。</p>
 <ol start="2">
 <li><strong>使用<code>std::string</code>类：</strong></li>
 </ol>
@@ -36,11 +58,10 @@
 <p>使用<code>std::string</code>类时，字符串的长度和内存管理由<code>std::string</code>类自动处理，你无需担心内存结构。<code>std::string</code>类会在需要时动态分配内存以容纳字符串。</p>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
+        <tag>2023-11</tag>
       </tags>
   </entry>
 </search>
