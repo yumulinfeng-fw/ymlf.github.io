@@ -275,7 +275,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-13 19:55:32 / 修改时间：20:04:02" itemprop="dateCreated datePublished" datetime="2023-11-13T19:55:32+08:00">2023-11-13</time>
+      <time title="创建时间：2023-11-13 19:55:32 / 修改时间：20:18:17" itemprop="dateCreated datePublished" datetime="2023-11-13T19:55:32+08:00">2023-11-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -308,7 +308,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="实现可变长数组"><a href="#实现可变长数组" class="headerlink" title="实现可变长数组"></a>实现可变长数组</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Array&#123;</span><br><span class="line">public:</span><br><span class="line">    Array(int length = 0);</span><br><span class="line">    ~Array();</span><br><span class="line">public:</span><br><span class="line">    int &amp; operator[](int i);</span><br><span class="line">    const int &amp; operator[](int i) const;</span><br><span class="line">public:</span><br><span class="line">    int length() const &#123; return m_length; &#125;</span><br><span class="line">    void display() const;</span><br><span class="line">private:</span><br><span class="line">    int m_length;  //数组长度</span><br><span class="line">    int *m_p;  //指向数组内存的指针</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Array::Array(int length): m_length(length)&#123;</span><br><span class="line">    if(length == 0)&#123;</span><br><span class="line">        m_p = NULL;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        m_p = new int[length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array::~Array()&#123;</span><br><span class="line">    delete[] m_p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int&amp; Array::operator[](int i)&#123;</span><br><span class="line">    return m_p[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const int &amp; Array::operator[](int i) const&#123;</span><br><span class="line">    return m_p[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Array::display() const&#123;</span><br><span class="line">    for(int i = 0; i &lt; m_length; i++)&#123;</span><br><span class="line">        if(i == m_length - 1)&#123;</span><br><span class="line">            cout&lt;&lt;m_p[i]&lt;&lt;endl;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            cout&lt;&lt;m_p[i]&lt;&lt;&quot;, &quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">    Array A(n);</span><br><span class="line">    for(int i = 0, len = A.length(); i &lt; len; i++)&#123;</span><br><span class="line">        A[i] = i * 5;</span><br><span class="line">    &#125;</span><br><span class="line">    A.display();</span><br><span class="line">   </span><br><span class="line">    const Array B(n);</span><br><span class="line">    cout&lt;&lt;B[n-1]&lt;&lt;endl;  //访问最后一个元素</span><br><span class="line">   </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h4 id="实现可变长数组"><a href="#实现可变长数组" class="headerlink" title="实现可变长数组"></a>实现可变长数组</h4><p>这种问题要记住实现两版，一定不要忘了写const对象的版本</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/13/%E6%8A%80%E6%9C%AF%E9%9D%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -362,9 +370,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-11-06 21:43:40 / 修改时间：21:49:55" itemprop="dateCreated datePublished" datetime="2023-11-06T21:43:40+08:00">2023-11-06</time>
+      <time title="创建时间：2023-11-06 21:43:40" itemprop="dateCreated datePublished" datetime="2023-11-06T21:43:40+08:00">2023-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-08 16:48:16" itemprop="dateModified" datetime="2023-11-08T16:48:16+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
