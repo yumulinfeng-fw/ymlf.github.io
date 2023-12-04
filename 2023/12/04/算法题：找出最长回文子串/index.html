@@ -19,28 +19,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ymlinfeng.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="长汀往事关于长汀的心路历程，已经在叶子老师的采访中讲述完毕了，这里就略过了，等推送出了我把链接甩上来">
+    <meta name="description" content="今天刷到一道很经典的算法题：找出字符串的最长回文子串，常见的思路是中心扩散，算法是dp，但是题解中有两个十分优秀的算法，特作记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我和《长汀往事》">
-<meta property="og:url" content="https://ymlinfeng.github.io/2023/11/06/%E6%88%91%E5%92%8C%E3%80%8A%E9%95%BF%E6%B1%80%E5%BE%80%E4%BA%8B%E3%80%8B/index.html">
+<meta property="og:title" content="算法题：找出最长回文子串">
+<meta property="og:url" content="https://ymlinfeng.github.io/2023/12/04/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%89%BE%E5%87%BA%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/index.html">
 <meta property="og:site_name" content="孟孟の新家">
-<meta property="og:description" content="长汀往事关于长汀的心路历程，已经在叶子老师的采访中讲述完毕了，这里就略过了，等推送出了我把链接甩上来">
+<meta property="og:description" content="今天刷到一道很经典的算法题：找出字符串的最长回文子串，常见的思路是中心扩散，算法是dp，但是题解中有两个十分优秀的算法，特作记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-06T13:43:40.000Z">
-<meta property="article:modified_time" content="2023-11-13T12:35:16.318Z">
+<meta property="article:published_time" content="2023-12-04T11:39:16.000Z">
+<meta property="article:modified_time" content="2023-12-04T11:49:07.015Z">
 <meta property="article:author" content="ZJMeng">
-<meta property="article:tag" content="pyq扩展">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ymlinfeng.github.io/2023/11/06/%E6%88%91%E5%92%8C%E3%80%8A%E9%95%BF%E6%B1%80%E5%BE%80%E4%BA%8B%E3%80%8B/">
+<link rel="canonical" href="https://ymlinfeng.github.io/2023/12/04/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%89%BE%E5%87%BA%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ymlinfeng.github.io/2023/11/06/%E6%88%91%E5%92%8C%E3%80%8A%E9%95%BF%E6%B1%80%E5%BE%80%E4%BA%8B%E3%80%8B/","path":"2023/11/06/我和《长汀往事》/","title":"我和《长汀往事》"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ymlinfeng.github.io/2023/12/04/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%89%BE%E5%87%BA%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/","path":"2023/12/04/算法题：找出最长回文子串/","title":"算法题：找出最长回文子串"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>我和《长汀往事》 | 孟孟の新家</title>
+<title>算法题：找出最长回文子串 | 孟孟の新家</title>
   
 
 
@@ -140,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%BF%E6%B1%80%E5%BE%80%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">长汀往事</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%B8%80%EF%BC%9A%E6%9A%B4%E5%8A%9B-O-n-2-TLE"><span class="nav-number">1.</span> <span class="nav-text">算法一：暴力(O(n^2))(TLE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BA%8C%EF%BC%9ADP-O-n-2"><span class="nav-number">2.</span> <span class="nav-text">算法二：DP(O(n^2))</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%B8%89%EF%BC%9A%E5%80%92%E5%BA%8F%E6%B1%82%E4%BA%A4%E9%9B%86"><span class="nav-number">3.</span> <span class="nav-text">算法三：倒序求交集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%9B%9B%EF%BC%9AManacher%E7%AE%97%E6%B3%95-O-n"><span class="nav-number">4.</span> <span class="nav-text">算法四：Manacher算法(O(n))</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -249,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ymlinfeng.github.io/2023/11/06/%E6%88%91%E5%92%8C%E3%80%8A%E9%95%BF%E6%B1%80%E5%BE%80%E4%BA%8B%E3%80%8B/">
+    <link itemprop="mainEntityOfPage" href="https://ymlinfeng.github.io/2023/12/04/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%89%BE%E5%87%BA%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mzj.jpg">
@@ -262,12 +265,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="我和《长汀往事》 | 孟孟の新家">
+      <meta itemprop="name" content="算法题：找出最长回文子串 | 孟孟の新家">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          我和《长汀往事》
+          算法题：找出最长回文子串
         </h1>
 
         <div class="post-meta-container">
@@ -277,15 +280,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-11-06 21:43:40" itemprop="dateCreated datePublished" datetime="2023-11-06T21:43:40+08:00">2023-11-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-13 20:35:16" itemprop="dateModified" datetime="2023-11-13T20:35:16+08:00">2023-11-13</time>
+      <time title="创建时间：2023-12-04 19:39:16 / 修改时间：19:49:07" itemprop="dateCreated datePublished" datetime="2023-12-04T19:39:16+08:00">2023-12-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -293,12 +290,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/2023-11/" itemprop="url" rel="index"><span itemprop="name">2023-11</span></a>
+          <a href="/categories/2023-12/" itemprop="url" rel="index"><span itemprop="name">2023-12</span></a>
         </span>
     </span>
 
   
-    <span id="/2023/11/06/%E6%88%91%E5%92%8C%E3%80%8A%E9%95%BF%E6%B1%80%E5%BE%80%E4%BA%8B%E3%80%8B/" class="post-meta-item leancloud_visitors" data-flag-title="我和《长汀往事》" title="阅读次数">
+    <span id="/2023/12/04/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%89%BE%E5%87%BA%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="post-meta-item leancloud_visitors" data-flag-title="算法题：找出最长回文子串" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -320,7 +317,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="长汀往事"><a href="#长汀往事" class="headerlink" title="长汀往事"></a>长汀往事</h2><p>关于长汀的心路历程，已经在叶子老师的采访中讲述完毕了，这里就略过了，等推送出了我把链接甩上来</p>
+    <div class="post-body" itemprop="articleBody"><p>今天刷到一道很经典的算法题：找出字符串的最长回文子串，常见的思路是中心扩散，算法是dp，但是题解中有两个十分优秀的算法，特作记录</p>
+<span id="more"></span>
+
+<h3 id="算法一：暴力-O-n-2-TLE"><a href="#算法一：暴力-O-n-2-TLE" class="headerlink" title="算法一：暴力(O(n^2))(TLE)"></a>算法一：暴力(O(n^2))(TLE)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string longestPalindrome(string s) &#123;</span><br><span class="line">        string ans = &quot;&quot;;</span><br><span class="line">        int n_max = 0;</span><br><span class="line">        for(int i = 0; i &lt; s.size(); ++i)&#123;</span><br><span class="line">            int n = 1;</span><br><span class="line">            string res(1, s[i]);</span><br><span class="line">            for(int j = 1; ; ++j)&#123;</span><br><span class="line">                if(i - j &lt; 0 || i + j &gt;= s.size() || s[i - j] != s[i + j])&#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    n += 2;</span><br><span class="line">                    res = s[i - j] + res + s[i + j];</span><br><span class="line">                    // cout &lt;&lt; i &lt;&lt; &#x27; &#x27; &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(n &gt; n_max)&#123;</span><br><span class="line">                n_max = n;</span><br><span class="line">                ans = res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0; i &lt; s.size(); ++i)&#123;</span><br><span class="line">            int n = 1;</span><br><span class="line">            string res = &quot;&quot;;</span><br><span class="line">            for(int j = 0; ; j ++)&#123;</span><br><span class="line">                if(i - j &lt; 0 || i + j + 1 &gt;= s.size() || s[i - j] != s[i + j + 1])&#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    n += 2;</span><br><span class="line">                    res = s[i - j] + res + s[i + 1 + j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(n &gt; n_max)&#123;</span><br><span class="line">                n_max = n;</span><br><span class="line">                ans = res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="算法二：DP-O-n-2"><a href="#算法二：DP-O-n-2" class="headerlink" title="算法二：DP(O(n^2))"></a>算法二：DP(O(n^2))</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string longestPalindrome(string s) &#123;</span><br><span class="line">        int n = s.size();</span><br><span class="line">        if (n &lt; 2) &#123;</span><br><span class="line">            return s;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        int maxLen = 1;</span><br><span class="line">        int begin = 0;</span><br><span class="line">        // dp[i][j] 表示 s[i..j] 是否是回文串</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; dp(n, vector&lt;int&gt;(n));</span><br><span class="line">        // 初始化：所有长度为 1 的子串都是回文串</span><br><span class="line">        for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">            dp[i][i] = true;</span><br><span class="line">        &#125;</span><br><span class="line">        // 递推开始</span><br><span class="line">        // 先枚举子串长度</span><br><span class="line">        for (int L = 2; L &lt;= n; L++) &#123;</span><br><span class="line">            // 枚举左边界，左边界的上限设置可以宽松一些</span><br><span class="line">            for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">                // 由 L 和 i 可以确定右边界，即 j - i + 1 = L 得</span><br><span class="line">                int j = L + i - 1;</span><br><span class="line">                // 如果右边界越界，就可以退出当前循环</span><br><span class="line">                if (j &gt;= n) &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                if (s[i] != s[j]) &#123;</span><br><span class="line">                    dp[i][j] = false;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    if (j - i &lt; 3) &#123;</span><br><span class="line">                        dp[i][j] = true;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        dp[i][j] = dp[i + 1][j - 1];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                // 只要 dp[i][L] == true 成立，就表示子串 s[i..L] 是回文，此时记录回文长度和起始位置</span><br><span class="line">                if (dp[i][j] &amp;&amp; j - i + 1 &gt; maxLen) &#123;</span><br><span class="line">                    maxLen = j - i + 1;</span><br><span class="line">                    begin = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return s.substr(begin, maxLen);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="算法三：倒序求交集"><a href="#算法三：倒序求交集" class="headerlink" title="算法三：倒序求交集"></a>算法三：倒序求交集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public String longestPalindrome(String s) &#123;</span><br><span class="line"></span><br><span class="line">        int length = s.length();</span><br><span class="line">        String maxStr=&quot;&quot;;</span><br><span class="line">        String reverse=new StringBuffer(s).reverse().toString();</span><br><span class="line"></span><br><span class="line">        int x=0;</span><br><span class="line">        int y=1;</span><br><span class="line">        while (x&lt;length&amp;&amp;y&lt;=length)&#123;</span><br><span class="line">            String substring = s.substring(x, y);</span><br><span class="line">            if (reverse.contains(substring))&#123;</span><br><span class="line">                if(substring.equals(new StringBuffer(substring).reverse().toString()))</span><br><span class="line">                if (substring.length()&gt;maxStr.length())&#123;</span><br><span class="line">                    maxStr=substring;</span><br><span class="line">                &#125;</span><br><span class="line">                y++;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                x++;</span><br><span class="line">                y=x+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return maxStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="算法四：Manacher算法-O-n"><a href="#算法四：Manacher算法-O-n" class="headerlink" title="算法四：Manacher算法(O(n))"></a>算法四：Manacher算法(O(n))</h3><p>详见：<a href="leetcode%E5%AE%98%E6%96%B9%E9%A2%98%E8%A7%A3">https://leetcode.cn/problems/longest-palindromic-substring/solutions/255195/zui-chang-hui-wen-zi-chuan-by-leetcode-solution/</a></p>
 
     </div>
 
@@ -344,21 +347,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/pyq%E6%89%A9%E5%B1%95/" rel="tag"># pyq扩展</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag"># 动态规划</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/11/06/C++%E7%9A%84%E8%BF%9B%E9%98%B6%E8%AF%AD%E6%B3%95(%E4%BB%85%E8%AF%AD%E6%B3%95%E5%B1%82%E9%9D%A2)/" rel="prev" title="C++的进阶语法">
-                  <i class="fa fa-angle-left"></i> C++的进阶语法
+                <a href="/2023/11/14/C-C-const%E4%B8%8Estatic%E5%85%B3%E9%94%AE%E5%AD%97/" rel="prev" title="C/C++const与static关键字">
+                  <i class="fa fa-angle-left"></i> C/C++const与static关键字
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/13/%E6%8A%80%E6%9C%AF%E9%9D%A2/" rel="next" title="基础代码面">
-                  基础代码面 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
